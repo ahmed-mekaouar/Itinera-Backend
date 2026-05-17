@@ -6,7 +6,7 @@ import path from 'path';
 dotenv.config();
 
 // Route imports — uncomment as each feature is implemented
-// import authRoutes from './routes/auth.routes';
+import authRoutes from './routes/auth.routes';
 // import userRoutes from './routes/user.routes';
 // import providerRoutes from './routes/provider.routes';
 // import serviceRoutes from './routes/service.routes';
@@ -38,7 +38,7 @@ app.use(flattenQuery);
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // Routes — uncomment as each feature is implemented
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 // app.use('/api/users', userRoutes);
 // app.use('/api/providers', providerRoutes);
 // app.use('/api/services', serviceRoutes);
