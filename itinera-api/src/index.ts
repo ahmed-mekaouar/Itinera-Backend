@@ -19,6 +19,7 @@ dotenv.config();
 // import tourRoutes from './routes/tour.routes';
 // import chatbotRoutes from './routes/chatbot.routes';
 import { errorHandler } from './middleware/error.middleware';
+import { flattenQuery } from './middleware/query.middleware';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -33,6 +34,7 @@ app.use(cors({
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
+app.use(flattenQuery);
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // Routes — uncomment as each feature is implemented
