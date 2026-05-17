@@ -8,7 +8,7 @@ dotenv.config();
 // Route imports — uncomment as each feature is implemented
 import authRoutes from './routes/auth.routes';
 // import userRoutes from './routes/user.routes';
-// import providerRoutes from './routes/provider.routes';
+import providerRoutes from './routes/provider.routes';
 // import serviceRoutes from './routes/service.routes';
 // import bookingRoutes from './routes/booking.routes';
 // import reviewRoutes from './routes/review.routes';
@@ -40,7 +40,7 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 // Routes — uncomment as each feature is implemented
 app.use('/api/auth', authRoutes);
 // app.use('/api/users', userRoutes);
-// app.use('/api/providers', providerRoutes);
+app.use('/api/providers', providerRoutes);
 // app.use('/api/services', serviceRoutes);
 // app.use('/api/bookings', bookingRoutes);
 // app.use('/api/reviews', reviewRoutes);
